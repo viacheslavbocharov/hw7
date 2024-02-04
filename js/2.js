@@ -1,16 +1,10 @@
-// 2 Вивести квадрати чисел від 10 до 20.
 
-//Вопрос: нужно ли мне выводить в отдельную переменную параметр и условие цикла для дальнейшего удобства работы с кодом и болешей наглядности или это излишне?
-let startNumber = 10;
-let finishNumber = 20;
+// 2 Один долар коштує 27 гривень. Вивести дані з розрахунком вартості 10, 20, 30... 100 доларів.
 
-for (let i = startNumber; i <= finishNumber; i++) {
-    let iMul = i*i;
-console.log(`${i}^2 = ${iMul}`);
-}
+let exchangeRate = 27;
+let convertToHrn;
 
-//простой вариант
-// for (let i = 10; i <= 20; i++) {
-//     let iMul = i*i;
-// console.log(`${i}^2 = ${iMul}`);
-// }
+for (i = 10 ; i <=100 ; i +=10){
+    convertToHrn = i * exchangeRate;
+console.log(`${i}$ = ${convertToHrn}HRN`)
+};

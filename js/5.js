@@ -1,18 +1,25 @@
-// Знайти добуток усіх цілих чисел від 15 до 35.
+// 5 Дане деяке число. Визначити, чи можна одержати це число шляхом зведення числа 3 у деякий ступінь. 
+//(Наприклад, числа 9, 81 можна отримати, а 13 - не можна).
 
-let startNumber = 15;
-let lastNumber = 35;
-let mult;
+let userNumber = parseInt(prompt("Enter an integer"));
+let base = 3;
+let exponent = 0;
+let power;
+let canGetByPower = false;
+let res;
 
-for (i = startNumber; i <= lastNumber; i++) {
 
-    if (i === startNumber) {
-        mult = startNumber;
-        continue;
+do {
+
+    res = Math.pow(base, exponent);
+    if (userNumber / res === 1) {
+        canGetByPower = true;
+        finalExponent = exponent;
     }
+    exponent++
 
-    mult *= i;
-    console.log(mult)
-}
+} while (res < userNumber);
 
-console.log(`${startNumber} * ` + (startNumber + 1) + ` * ... * ${lastNumber} = ${mult}`)
+
+console.log(canGetByPower ? `The number ${userNumber} can get by power ${base} on ${finalExponent}` : `The number ${userNumber} cannot get by power ${base}.`);
+alert(canGetByPower ? `The number ${userNumber} can get by power ${base} on ${finalExponent}` : `The number ${userNumber} cannot get by power ${base}.`);
